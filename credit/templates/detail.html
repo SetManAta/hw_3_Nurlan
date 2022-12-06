@@ -1,37 +1,38 @@
 
+
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<h3>{{ client.name }}</h3>
-<ul>
-    <li>Гражданство: {{client.citizenship}}</li>
-    <li>Год рождение: {{client.birth_year}}</li>
-    <li>Место работы: {{client.work_place}}</li>
-    
-    {% for klient in client.accounts.all%}
-        {% for credit in klient.credits.all%}
-        
-    
-    
-    
-    <li>{{klient}}</li>
-    <li>Сумма кредита: {{credit.sum}}</li>
-    
-    {%endfor%}    
-    {%endfor%}    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  
+       
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ client.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Год рождение: {{client.birth_year}}</h6>
+          <p class="card-text">Гражданство: {{client.citizenship}}</p>
+          <p class="card-text">Место работы: {{client.work_place}}</p>
+          {% for klient in client.accounts.all%}
+          {% for credit in klient.credits.all%}
+          <p class="card-text">{{klient}}</p>
+          <p class="card-text">Сумма кредита:: {{credit.sum}}</p>
+          
+        </div>
+      </div>
+{%endfor%}
+{%endfor%}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
    
-</ul>
-   
-
-
-</body>
+  </body>
 </html>
