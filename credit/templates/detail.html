@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>{{ client.name }}</h3>
+<ul>
+    <li>Гражданство: {{client.citizenship}}</li>
+    <li>Год рождение: {{client.birth_year}}</li>
+    <li>Место работы: {{client.work_place}}</li>
+    
+    {% for klient in client.accounts.all%}
+        {% for credit in klient.credits.all%}
+        
+    
+    
+    
+    <li>{{klient}}</li>
+    <li>Сумма кредита: {{credit.sum}}</li>
+    
+    {%endfor%}    
+    {%endfor%}    
+
+   
+</ul>
+   
+
+
+</body>
+</html>
